@@ -1,0 +1,184 @@
+// This file is auto-generated, don't edit it. Thanks.
+package main
+
+import (
+	"os"
+	slb20140515  "github.com/alibabacloud-go/slb-20140515/v3/client"
+	openapi  "github.com/alibabacloud-go/darabonba-openapi/client"
+	"github.com/alibabacloud-go/tea/tea"
+)
+
+
+/**
+ * 使用AK&SK初始化账号Client
+ * @param accessKeyId
+ * @param accessKeySecret
+ * @return Client
+ * @throws Exception
+ */
+
+
+
+
+
+func CreateClient (accessKeyId *string, accessKeySecret *string) (_result *slb20140515.Client, _err error) {
+	config := &openapi.Config{
+		// 您的AccessKey ID
+		AccessKeyId: accessKeyId,
+		// 您的AccessKey Secret
+		AccessKeySecret: accessKeySecret,
+	}
+	// 访问的域名
+	config.Endpoint = tea.String("slb.aliyuncs.com")
+	_result = &slb20140515.Client{}
+	_result, _err = slb20140515.NewClient(config)
+	return _result, _err
+}
+
+func _main (args []*string) (_err error) {
+	client, _err := CreateClient(tea.String("accessKeyId"), tea.String("accessKeySecret"))
+	if _err != nil {
+		return _err
+	}
+
+	uploadServerCertificateRequest := &slb20140515.UploadServerCertificateRequest{
+		RegionId: tea.String("cn-beijing"),
+		AliCloudCertificateRegionId: tea.String("cn-beijing"),
+		ServerCertificate: tea.String("-----BEGIN CERTIFICATE-----
+		MIIFMTCCBBmgAwIBAgISBFFB3hFOn9QSo8yFxh2Tsk9zMA0GCSqGSIb3DQEBCwUA
+		MDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQD
+		EwJSMzAeFw0yMjAyMTgyMjU3MzVaFw0yMjA1MTkyMjU3MzRaMCExHzAdBgNVBAMM
+		FiouZW0ubmcuZmctZXhhbXBsZS5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw
+		ggEKAoIBAQDNIz3Rr7PXHEte+EVEQmaERemTWei8U4nWtrMHIcgy/7TwlmF6dxbj
+		CKRF+XLJAYwDNVzDIA54b0rnXr3LSOYK66x/vDeLSVgQosoKZtB3ykI/4KBSlTdw
+		SkDQw3EFpXWnP880i+vi84uG67CqrQiHBHWVcf9JJdWPUUOehHJTncIPVVS1rgPd
+		qq5mxT/LQbMTHgKm6w2XR07t/k3QxXNoXil36uYb1MMkpMSrN4pvX2AsUbP/o++z
+		jr08XwVOi2hu552O62Diy1ykM583ArWmmaayNfnSZejfkwQihEtZ1df52bWAP87F
+		a5G1Y6Noem26dA4l7I1qSFNCDecwNxhFAgMBAAGjggJQMIICTDAOBgNVHQ8BAf8E
+		BAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQC
+		MAAwHQYDVR0OBBYEFDLwPmJ/BOVEs6X0VBska5oTX3hFMB8GA1UdIwQYMBaAFBQu
+		sxe3WFbLrlAJQOYfr52LFMLGMFUGCCsGAQUFBwEBBEkwRzAhBggrBgEFBQcwAYYV
+		aHR0cDovL3IzLm8ubGVuY3Iub3JnMCIGCCsGAQUFBzAChhZodHRwOi8vcjMuaS5s
+		ZW5jci5vcmcvMCEGA1UdEQQaMBiCFiouZW0ubmcuZmctZXhhbXBsZS5jb20wTAYD
+		VR0gBEUwQzAIBgZngQwBAgEwNwYLKwYBBAGC3xMBAQEwKDAmBggrBgEFBQcCARYa
+		aHR0cDovL2Nwcy5sZXRzZW5jcnlwdC5vcmcwggEDBgorBgEEAdZ5AgQCBIH0BIHx
+		AO8AdgApeb7wnjk5IfBWc59jpXflvld9nGAK+PlNXSZcJV3HhAAAAX8PRQM4AAAE
+		AwBHMEUCIQC+mbTKsrZv13oHHXbcnrsUnQKw9G/UIfxH8VFx2PTDcgIgPoDDAO96
+		YNFPQbZq1Nl0kWacaP3MmhTDXUnEDd8s5CMAdQBvU3asMfAxGdiZAKRRFf93FRwR
+		2QLBACkGjbIImjfZEwAAAX8PRQUIAAAEAwBGMEQCIFLjnFQ2UyDQDiSfraH1mlyW
+		BerFydG8xs3qL59hmv/YAiBc6Mp17Ut+GNMLNTUVqB3rC6EEtnA6HDAhR5JppEAu
+		6DANBgkqhkiG9w0BAQsFAAOCAQEAtZpuJOgSTtdHhiqTh67JzwQkl4zGLg3hO2sh
+		6fjxVjJBN9vLY7rjB6xoYMRLMx0f3wDREMb2ut4D9oWT4N8K0/FRPaWT8HP36su6
+		0RTYCIJso+WmYUtDqsAJ6AcYRO+eNpbuFoqTEqk+yUNdfSYJZ8WDlOBURsKZzjxs
+		oHqyXpRJ8AUfeNXXNBnNiPOqwfVif+dVECl/yON/2gxXrZb0ZJ2DJTdZL5NjNX9E
+		gNe+H5JHrxM10PdY8OfzGg89Y5n3Pp8gPf+W+whG3HWMjNfXBHUgw9wR/mGVckeL
+		VP5CPyy5jdYDzEgtLtg5i2KbietBTt5VCQE7S8/JfsxLF4DZ5Q==
+		-----END CERTIFICATE-----
+
+		-----BEGIN CERTIFICATE-----
+		MIIFFjCCAv6gAwIBAgIRAJErCErPDBinU/bWLiWnX1owDQYJKoZIhvcNAQELBQAw
+		TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh
+		cmNoIEdyb3VwMRUwEwYDVQQDEwxJU1JHIFJvb3QgWDEwHhcNMjAwOTA0MDAwMDAw
+		WhcNMjUwOTE1MTYwMDAwWjAyMQswCQYDVQQGEwJVUzEWMBQGA1UEChMNTGV0J3Mg
+		RW5jcnlwdDELMAkGA1UEAxMCUjMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
+		AoIBAQC7AhUozPaglNMPEuyNVZLD+ILxmaZ6QoinXSaqtSu5xUyxr45r+XXIo9cP
+		R5QUVTVXjJ6oojkZ9YI8QqlObvU7wy7bjcCwXPNZOOftz2nwWgsbvsCUJCWH+jdx
+		sxPnHKzhm+/b5DtFUkWWqcFTzjTIUu61ru2P3mBw4qVUq7ZtDpelQDRrK9O8Zutm
+		NHz6a4uPVymZ+DAXXbpyb/uBxa3Shlg9F8fnCbvxK/eG3MHacV3URuPMrSXBiLxg
+		Z3Vms/EY96Jc5lP/Ooi2R6X/ExjqmAl3P51T+c8B5fWmcBcUr2Ok/5mzk53cU6cG
+		/kiFHaFpriV1uxPMUgP17VGhi9sVAgMBAAGjggEIMIIBBDAOBgNVHQ8BAf8EBAMC
+		AYYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMBIGA1UdEwEB/wQIMAYB
+		Af8CAQAwHQYDVR0OBBYEFBQusxe3WFbLrlAJQOYfr52LFMLGMB8GA1UdIwQYMBaA
+		FHm0WeZ7tuXkAXOACIjIGlj26ZtuMDIGCCsGAQUFBwEBBCYwJDAiBggrBgEFBQcw
+		AoYWaHR0cDovL3gxLmkubGVuY3Iub3JnLzAnBgNVHR8EIDAeMBygGqAYhhZodHRw
+		Oi8veDEuYy5sZW5jci5vcmcvMCIGA1UdIAQbMBkwCAYGZ4EMAQIBMA0GCysGAQQB
+		gt8TAQEBMA0GCSqGSIb3DQEBCwUAA4ICAQCFyk5HPqP3hUSFvNVneLKYY611TR6W
+		PTNlclQtgaDqw+34IL9fzLdwALduO/ZelN7kIJ+m74uyA+eitRY8kc607TkC53wl
+		ikfmZW4/RvTZ8M6UK+5UzhK8jCdLuMGYL6KvzXGRSgi3yLgjewQtCPkIVz6D2QQz
+		CkcheAmCJ8MqyJu5zlzyZMjAvnnAT45tRAxekrsu94sQ4egdRCnbWSDtY7kh+BIm
+		lJNXoB1lBMEKIq4QDUOXoRgffuDghje1WrG9ML+Hbisq/yFOGwXD9RiX8F6sw6W4
+		avAuvDszue5L3sz85K+EC4Y/wFVDNvZo4TYXao6Z0f+lQKc0t8DQYzk1OXVu8rp2
+		yJMC6alLbBfODALZvYH7n7do1AZls4I9d1P4jnkDrQoxB3UqQ9hVl3LEKQ73xF1O
+		yK5GhDDX8oVfGKF5u+decIsH4YaTw7mP3GFxJSqv3+0lUFJoi5Lc5da149p90Ids
+		hCExroL1+7mryIkXPeFM5TgO9r0rvZaBFOvV2z0gp35Z0+L4WPlbuEjN/lxPFin+
+		HlUjr8gRsI3qfJOQFy/9rKIJR0Y/8Omwt/8oTWgy1mdeHmmjk7j1nYsvC9JSQ6Zv
+		MldlTTKB3zhThV1+XWYp6rjd5JW1zbVWEkLNxE7GJThEUG3szgBVGP7pSWTUTsqX
+		nLRbwHOoq7hHwg==
+		-----END CERTIFICATE-----
+
+		-----BEGIN CERTIFICATE-----
+		MIIFYDCCBEigAwIBAgIQQAF3ITfU6UK47naqPGQKtzANBgkqhkiG9w0BAQsFADA/
+		MSQwIgYDVQQKExtEaWdpdGFsIFNpZ25hdHVyZSBUcnVzdCBDby4xFzAVBgNVBAMT
+		DkRTVCBSb290IENBIFgzMB4XDTIxMDEyMDE5MTQwM1oXDTI0MDkzMDE4MTQwM1ow
+		TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh
+		cmNoIEdyb3VwMRUwEwYDVQQDEwxJU1JHIFJvb3QgWDEwggIiMA0GCSqGSIb3DQEB
+		AQUAA4ICDwAwggIKAoICAQCt6CRz9BQ385ueK1coHIe+3LffOJCMbjzmV6B493XC
+		ov71am72AE8o295ohmxEk7axY/0UEmu/H9LqMZshftEzPLpI9d1537O4/xLxIZpL
+		wYqGcWlKZmZsj348cL+tKSIG8+TA5oCu4kuPt5l+lAOf00eXfJlII1PoOK5PCm+D
+		LtFJV4yAdLbaL9A4jXsDcCEbdfIwPPqPrt3aY6vrFk/CjhFLfs8L6P+1dy70sntK
+		4EwSJQxwjQMpoOFTJOwT2e4ZvxCzSow/iaNhUd6shweU9GNx7C7ib1uYgeGJXDR5
+		bHbvO5BieebbpJovJsXQEOEO3tkQjhb7t/eo98flAgeYjzYIlefiN5YNNnWe+w5y
+		sR2bvAP5SQXYgd0FtCrWQemsAXaVCg/Y39W9Eh81LygXbNKYwagJZHduRze6zqxZ
+		Xmidf3LWicUGQSk+WT7dJvUkyRGnWqNMQB9GoZm1pzpRboY7nn1ypxIFeFntPlF4
+		FQsDj43QLwWyPntKHEtzBRL8xurgUBN8Q5N0s8p0544fAQjQMNRbcTa0B7rBMDBc
+		SLeCO5imfWCKoqMpgsy6vYMEG6KDA0Gh1gXxG8K28Kh8hjtGqEgqiNx2mna/H2ql
+		PRmP6zjzZN7IKw0KKP/32+IVQtQi0Cdd4Xn+GOdwiK1O5tmLOsbdJ1Fu/7xk9TND
+		TwIDAQABo4IBRjCCAUIwDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMCAQYw
+		SwYIKwYBBQUHAQEEPzA9MDsGCCsGAQUFBzAChi9odHRwOi8vYXBwcy5pZGVudHJ1
+		c3QuY29tL3Jvb3RzL2RzdHJvb3RjYXgzLnA3YzAfBgNVHSMEGDAWgBTEp7Gkeyxx
+		+tvhS5B1/8QVYIWJEDBUBgNVHSAETTBLMAgGBmeBDAECATA/BgsrBgEEAYLfEwEB
+		ATAwMC4GCCsGAQUFBwIBFiJodHRwOi8vY3BzLnJvb3QteDEubGV0c2VuY3J5cHQu
+		b3JnMDwGA1UdHwQ1MDMwMaAvoC2GK2h0dHA6Ly9jcmwuaWRlbnRydXN0LmNvbS9E
+		U1RST09UQ0FYM0NSTC5jcmwwHQYDVR0OBBYEFHm0WeZ7tuXkAXOACIjIGlj26Ztu
+		MA0GCSqGSIb3DQEBCwUAA4IBAQAKcwBslm7/DlLQrt2M51oGrS+o44+/yQoDFVDC
+		5WxCu2+b9LRPwkSICHXM6webFGJueN7sJ7o5XPWioW5WlHAQU7G75K/QosMrAdSW
+		9MUgNTP52GE24HGNtLi1qoJFlcDyqSMo59ahy2cI2qBDLKobkx/J3vWraV0T9VuG
+		WCLKTVXkcGdtwlfFRjlBz4pYg1htmf5X6DYO8A4jqv2Il9DjXA6USbW1FzXSLr9O
+		he8Y4IWS6wY7bCkjCWDcRQJMEhg76fsO3txE+FiYruq9RUWhiF1myv4Q6W+CyBFC
+		Dfvp7OOGAN6dEOM4+qR9sdjoSYKEBpsr6GtPAQw4dy753ec5
+		-----END CERTIFICATE-----
+		"),
+		PrivateKey: tea.String("-----BEGIN RSA PRIVATE KEY-----
+		MIIEowIBAAKCAQEAzSM90a+z1xxLXvhFREJmhEXpk1novFOJ1razByHIMv+08JZh
+		encW4wikRflyyQGMAzVcwyAOeG9K5169y0jmCuusf7w3i0lYEKLKCmbQd8pCP+Cg
+		UpU3cEpA0MNxBaV1pz/PNIvr4vOLhuuwqq0IhwR1lXH/SSXVj1FDnoRyU53CD1VU
+		ta4D3aquZsU/y0GzEx4CpusNl0dO7f5N0MVzaF4pd+rmG9TDJKTEqzeKb19gLFGz
+		/6Pvs469PF8FTotobuedjutg4stcpDOfNwK1ppmmsjX50mXo35MEIoRLWdXX+dm1
+		gD/OxWuRtWOjaHptunQOJeyNakhTQg3nMDcYRQIDAQABAoIBAEpvEytWuca/+YlI
+		RLnz7gbo50wUP6K2HTnPqT5ZP69hoWH67vvk4mUW6aSKUuAks40me7ZBl36Tw3YY
+		pn1wwigMQ9dFkFH2FwJST0Ve8R3GQiuzcfkFM8yG5OXbRNNrqjk5qhHDA6CiBmq6
+		cqw7hPCY6aGEb8E2/Tq3nfWS0XkNCfrqmenyFQipn5FK0Di8Gt1s6veIhbEgGmHU
+		CX5enQbioz7sYDBxxnEhrrkv1DG/UyBGzAUVw+G3wT/8fwzQ56uc8YMXJW+dADE7
+		RWFt/d0UTFP5+Kr8cVcU7aW50BMu0IGmCQe//LyUqylmkpywzoG7TkRrSQXpsx6j
+		UMLVDDECgYEA/mOImSYrowFPmMvNe7G5RfH+jnmkrpcETnIdOszfxHOAcGO/m2eZ
+		uxuuir9ebKLjzeclU5vw9Czlf48rnUmrEAtaqMhE7Esn0iQdrREhNEBQMVL36KJC
+		LoZqqbWfWSpZhKjXOZpAY6FIJu2t73IgxliN8kdxGgxATHBi87emhvMCgYEAzm/a
+		HaYHyyZZiB4FZnIxXEahtdczXipFNAz4VbEAu4OpS1dvYaWck9L2JEYIxT9gLMde
+		zFh75Yb3aJGJXgPB2kGnmVs0d1yTTxg6N/FlUvJBmy1PPeAemaBxYKQEysYKTV51
+		5xoiVgjzlCPMp5GMu7kfKkwvmqBcEkULzXe6IecCgYApKBtSg81tiunA08BD8eYC
+		vfssO9v77yzgMDAwcjMFypYOGOVIFEPX9MuRYRK6ysPGbU4pr8IVDyp2L8ijouaN
+		KvkY84XLIQGpSvSOKoZPuNQAlubK+W1xr4eUO3EzcNmYz+Q6So1+UPqmaa/JXJKW
+		5H7aotpWl4LTmx83RRApJwKBgD5ppsIr/lM3Jv52RR+yCqZhXGbDx24CzaVs/m+5
+		8gS/S6HRr4UQMwSmVXCmE+S+wm8HX+vcHKlKYuakial47VT1YJyG7Jfhz0+sfX2I
+		aB/pylgGHN0SM24zCdQ0ApbjxR2bH35dcmAcmLgDEs7evHPNBlUdb48KSIvlgCoA
+		tq+lAoGBAMJ07MOpfI2qvMx1+Oczqg/EHyFoktcXP2jZ3aJb+eQgm4DTyULl9pgs
+		GhJ6aXC6Hm2Fp4GwGeECjTg8o2MrE0bDYBYCqD6d65VcmAv+4TLSZLAGEI97olUl
+		3gDG5oOXh5gDeJLixHLBjROM6kUdhi1ZmilguiDM2j6dpoRpEP5g
+		-----END RSA PRIVATE KEY-----"),
+		ServerCertificateName: tea.String("test-server"),
+	}
+	// 复制代码运行请自行打印 API 的返回值
+	_, _err = client.UploadServerCertificate(uploadServerCertificateRequest)
+	if _err != nil {
+		return _err
+	}
+	return _err
+}
+
+
+func main() {
+	err := _main(tea.StringSlice(os.Args[1:]))
+	if err != nil {
+		panic(err)
+	}
+}
