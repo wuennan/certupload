@@ -1,0 +1,7 @@
+[aliSlb]
+AccessKey = "Lxxxxx"
+AccessKeySecret = "pXxxxxx"
+# 伦敦区域配置如下，其他区域请参考
+# https://help.aliyun.com/document_detail/27584.html?spm=api-workbench.API%20Explorer.0.0.19be1e0fL36qP1
+RegionId = "eu-west-1"
+Endpoint = "slb.eu-west-1.aliyuncs.com"

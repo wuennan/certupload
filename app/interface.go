@@ -1,5 +1,5 @@
 package app
 
-type upload interface {
-	upload
+type Uploader interface {
+	Upload(CertName, CertificatePath, PrivateKeyPath string) error
 }
